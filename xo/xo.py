@@ -8,7 +8,8 @@ class _Player:
 
 
 class _XOTable:
-    xo_map = {k: None for k in range(1, 10)}  # {1:x, 2: None, 3: o, ...}
+    def __init__(self):
+        self.xo_map = {k: None for k in range(1, 10)}  # {1:x, 2: None, 3: o, ...}
 
     def __str__(self):
         map = self.xo_map
@@ -48,7 +49,9 @@ class _XOGame(_XOTable):
         pass
 
     def __init__(self, player1: _Player, player2: _Player) -> None:
-        pass
+        super(_XOGame, self).__init__()
+        self.player1 = player1
+        self.player2 = player2
 
     def _calculate_result(self):
         pass
@@ -58,4 +61,3 @@ class _XOGame(_XOTable):
 
     def winner(self) -> Optional[_Player]:
         pass
-
