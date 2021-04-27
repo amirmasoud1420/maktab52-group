@@ -61,3 +61,7 @@ class _XOGame(_XOTable):
 
     def winner(self) -> Optional[_Player]:
         pass
+
+
+def main():
+    ...
