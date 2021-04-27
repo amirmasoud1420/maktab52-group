@@ -54,6 +54,7 @@ class _XOGame(_XOTable):
         self.player2 = player2
 
     def _calculate_result(self):
+        # test
         pass
 
     def mark(self, cell_no, player: Union[_Player, Literal['x', 'o'], int]):
