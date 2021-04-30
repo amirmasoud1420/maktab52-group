@@ -54,8 +54,62 @@ class _XOGame(_XOTable):
         self.player2 = player2
 
     def _calculate_result(self):
-        # test
-        pass
+
+        super().__init__()
+
+        if all(self.xo_map[k] == "X" for k in range(1, 3)):
+            print("X WON")  # First Row
+            return True
+        if all(self.xo_map[k] == "O" for k in range(1, 3)):
+            print("O WON")  # First Row
+            return True
+        if all(self.xo_map[k] == "X" for k in range(4, 6)):
+            print("X WON")  # Second Row
+            return True
+        if all(self.xo_map[k] == "O" for k in range(4, 6)):
+            print("O WON")  # Second Row
+            return True
+        if all(self.xo_map[k] == "X" for k in range(7, 9)):
+            print("X WON")  # Third Row
+            return True
+        if all(self.xo_map[k] == "O" for k in range(7, 9)):
+            print("O WON")  # Third Row
+            return True
+        if all(self.xo_map[k] == "X" for k in [1, 4, 7]):
+            print("X WON")  # First Column
+            return True
+        if all(self.xo_map[k] == "O" for k in [1, 4, 7]):
+            print("O WON")  # First Column
+            return True
+        if all(self.xo_map[k] == "X" for k in [2, 5, 8]):
+            print("X WON")  # Second Column
+            return True
+        if all(self.xo_map[k] == "O" for k in [2, 5, 8]):
+            print("O WON")  # Second Column
+            return True
+        if all(self.xo_map[k] == "X" for k in [3, 6, 9]):
+            print("X WON")  # Third Column
+            return True
+        if all(self.xo_map[k] == "O" for k in [3, 6, 9]):
+            print("O WON")  # Third Column
+            return True
+        if all(self.xo_map[k] == "X" for k in [1, 5, 9]):
+            print("X WON")  # First Diagonal
+            return True
+        if all(self.xo_map[k] == "O" for k in [1, 5, 9]):
+            print("O WON")  # First Diagonal
+            return True
+        if all(self.xo_map[k] == "X" for k in [3, 5, 7]):
+            print("X WON")  # Second Diagonal
+            return True
+        if all(self.xo_map[k] == "O" for k in [3, 5, 7]):
+            print("O WON")  # Second Diagonal
+            return True
+
+        if all(self.xo_map[k] for k in range(1, 10)):  # checks weather the table is full or not
+            print("game over without winner")
+            return True
+        else: return False
 
     def mark(self, cell_no, player: Union[_Player, Literal['x', 'o'], int]):
         pass
